@@ -178,7 +178,7 @@ export default function HeroSection() {
       />
 
       {/* Headline */}
-      <div className="absolute inset-0 z-[3] flex flex-col justify-center md:block md:pt-[25vh] px-[5%] pointer-events-none">
+      <div className="absolute inset-0 z-[3] flex flex-col justify-center md:flex md:flex-row md:items-center md:justify-between md:pt-[25vh] px-[5%] pointer-events-none">
         <h1
           ref={headlineRef}
           className="w-full flex flex-col md:flex-row md:justify-between font-normal md:items-end gap-0.5 md:gap-1"
