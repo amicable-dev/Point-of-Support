@@ -157,7 +157,7 @@ export default function HeroSection() {
         style={{
           backgroundImage: 'url(/assets/hero-portrait.jpg)',
           backgroundSize: 'cover',
-          backgroundPosition: 'center 30%',
+          backgroundPosition: 'center 25%',
         }}
       />
 
@@ -173,28 +173,40 @@ export default function HeroSection() {
         className="absolute inset-0 z-[2] pointer-events-none"
         style={{
           background:
-            'linear-gradient(to bottom, rgba(242,242,242,0.15) 0%, rgba(242,242,242,0) 40%, rgba(242,242,242,0) 60%, rgba(242,242,242,0.2) 100%)',
+            'linear-gradient(to bottom, rgba(242,242,242,0.25) 0%, rgba(242,242,242,0) 30%, rgba(242,242,242,0) 60%, rgba(242,242,242,0.3) 100%)',
         }}
       />
 
-      {/* Headline — SplitText targets this element */}
-      <div className="absolute inset-0 z-[3] flex items-center justify-between pt-[clamp(12vh,25vh,25vh)] px-[5%] pointer-events-none">
-        <h1
-          ref={headlineRef}
-          className="w-full flex flex-col md:flex-row md:justify-between font-normal md:items-end gap-1"
-          style={{
-            fontFamily: "'Geist Sans', sans-serif",
-            fontSize: 'clamp(2.2rem, 7vw, 8rem)',
-            lineHeight: 1.0,
-            letterSpacing: '-0.04em',
-          }}
-        >
-          <span className="text-black">POINT</span>
-          <span className="text-[#c4a96a]">OF SUPPORT</span>
-        </h1>
+      {/* Headline + tagline — centered flex column on mobile, split on desktop */}
+      <div className="absolute inset-0 z-[3] flex flex-col justify-center px-[5%] md:pt-[25vh] md:flex-row md:items-center md:justify-between pointer-events-none">
+        <div className="flex flex-col gap-4 md:gap-0">
+          <h1
+            ref={headlineRef}
+            className="flex flex-col md:flex-row md:justify-between font-normal md:items-end gap-0.5 md:gap-1"
+            style={{
+              fontFamily: "'Geist Sans', sans-serif",
+              fontSize: 'clamp(2rem, 10vw, 8rem)',
+              lineHeight: 1.0,
+              letterSpacing: '-0.04em',
+            }}
+          >
+            <span className="text-black">POINT</span>
+            <span className="text-[#c4a96a]">OF SUPPORT</span>
+          </h1>
+          <p
+            className="text-black/70 md:hidden max-w-[280px]"
+            style={{
+              fontSize: 'clamp(14px, 3.5vw, 16px)',
+              lineHeight: 1.5,
+              letterSpacing: '-0.01em',
+            }}
+          >
+            Sometimes the bravest thing you can do — is simply reach out.
+          </p>
+        </div>
       </div>
 
-      {/* Tagline block - top left */}
+      {/* Desktop top-left block */}
       <div
         ref={taglineRef}
         className="absolute z-[4] opacity-0 max-md:hidden"
@@ -206,7 +218,7 @@ export default function HeroSection() {
         <p
           className="text-black mb-5 max-w-[320px]"
           style={{
-            fontSize: '20px',
+            fontSize: 'clamp(16px, 1.8vw, 20px)',
             lineHeight: 1.5,
             letterSpacing: '-0.02em',
           }}
@@ -224,7 +236,7 @@ export default function HeroSection() {
         </button>
       </div>
 
-      {/* Reassurance block - top right */}
+      {/* Desktop top-right reassurance */}
       <div
         ref={reassuranceRef}
         className="absolute z-[4] opacity-0 text-right max-md:hidden"
@@ -233,7 +245,7 @@ export default function HeroSection() {
         <p
           className="text-black max-w-[280px]"
           style={{
-            fontSize: '16px',
+            fontSize: 'clamp(14px, 1.5vw, 16px)',
             lineHeight: 1.6,
             letterSpacing: '-0.01em',
           }}
@@ -242,7 +254,7 @@ export default function HeroSection() {
         </p>
       </div>
 
-      {/* Mobile-only CTA */}
+      {/* Mobile CTA */}
       <div className="absolute bottom-[10%] left-0 right-0 z-[4] flex justify-center md:hidden">
         <button
           onClick={openBooking}
