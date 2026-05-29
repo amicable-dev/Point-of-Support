@@ -157,7 +157,7 @@ export default function HeroSection() {
         style={{
           backgroundImage: 'url(/assets/hero-portrait.jpg)',
           backgroundSize: 'cover',
-          backgroundPosition: 'center 25%',
+          backgroundPosition: 'center 30%',
         }}
       />
 
@@ -177,33 +177,30 @@ export default function HeroSection() {
         }}
       />
 
-      {/* Headline + tagline — centered flex column on mobile, split on desktop */}
-      <div className="absolute inset-0 z-[3] flex flex-col justify-center px-[5%] md:pt-[25vh] md:flex-row md:items-center md:justify-between pointer-events-none">
-        <div className="flex flex-col gap-4 md:gap-0 w-full">
-          <h1
-            ref={headlineRef}
-            className="w-full flex flex-col md:flex-row md:justify-between font-normal md:items-end gap-0.5 md:gap-1"
-            style={{
-              fontFamily: "'Geist Sans', sans-serif",
-              fontSize: 'clamp(2rem, 10vw, 8rem)',
-              lineHeight: 1.0,
-              letterSpacing: '-0.04em',
-            }}
-          >
-            <span className="text-black">POINT</span>
-            <span className="text-[#c4a96a]">OF SUPPORT</span>
-          </h1>
-          <p
-            className="text-black/70 md:hidden max-w-[280px]"
-            style={{
-              fontSize: 'clamp(14px, 3.5vw, 16px)',
-              lineHeight: 1.5,
-              letterSpacing: '-0.01em',
-            }}
-          >
-            Sometimes the bravest thing you can do — is simply reach out.
-          </p>
-        </div>
+      {/* Headline */}
+      <div className="absolute inset-0 z-[3] flex flex-col justify-center md:block md:pt-[25vh] px-[5%] pointer-events-none">
+        <h1
+          ref={headlineRef}
+          className="w-full flex flex-col md:flex-row md:justify-between font-normal md:items-end gap-0.5 md:gap-1"
+          style={{
+            fontFamily: "'Geist Sans', sans-serif",
+            fontSize: 'clamp(2rem, 10vw, 8rem)',
+            lineHeight: 1.0,
+            letterSpacing: '-0.04em',
+          }}
+        >
+          <span className="text-black">POINT</span>
+          <span className="text-[#c4a96a]">OF SUPPORT</span>
+        </h1>
+        <p className="text-black/70 md:hidden max-w-[280px] mt-4"
+          style={{
+            fontSize: 'clamp(14px, 3.5vw, 16px)',
+            lineHeight: 1.5,
+            letterSpacing: '-0.01em',
+          }}
+        >
+          Sometimes the bravest thing you can do — is simply reach out.
+        </p>
       </div>
 
       {/* Desktop top-left block */}
