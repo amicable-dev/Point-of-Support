@@ -73,8 +73,7 @@ export default function PricingSection() {
     <section
       ref={sectionRef}
       id="pricing"
-      className="w-full bg-black overflow-hidden"
-      style={{ padding: '120px 0' }}
+      className="w-full bg-black overflow-hidden py-16 md:py-28"
     >
       <div className="px-5">
         <ScrollReveal>
@@ -111,7 +110,7 @@ export default function PricingSection() {
               className={`pricing-card opacity-0 flex flex-col ${
                 plan.highlighted ? 'bg-[#c4a96a]' : 'bg-[#1d1d1d]'
               }`}
-              style={{ padding: '40px 32px' }}
+              style={{ padding: 'clamp(28px, 3vw, 40px) clamp(20px, 3vw, 32px)' }}
             >
               <p
                 className="text-[11px] uppercase tracking-[0.08em] mb-1"

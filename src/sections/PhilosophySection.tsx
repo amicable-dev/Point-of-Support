@@ -176,8 +176,7 @@ export default function PhilosophySection() {
     <section
       ref={sectionRef}
       id="philosophy"
-      className="relative w-full bg-black overflow-hidden"
-      style={{ padding: '150px 0' }}
+      className="relative w-full bg-black overflow-hidden py-16 md:py-36"
     >
       {/* Ambient cursor glow canvas */}
       {typeof window !== 'undefined' && window.innerWidth >= 768 && (

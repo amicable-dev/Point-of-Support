@@ -148,7 +148,7 @@ export default function HeroSection() {
     <section
       ref={sectionRef}
       className="relative w-full overflow-hidden"
-      style={{ height: '100vh', minHeight: '600px' }}
+      style={{ height: '100dvh', minHeight: '600px' }}
     >
       {/* Background image */}
       <div
@@ -178,13 +178,13 @@ export default function HeroSection() {
       />
 
       {/* Headline — SplitText targets this element */}
-      <div className="absolute inset-0 z-[3] flex items-center justify-between pt-[25vh] px-[5%] pointer-events-none">
+      <div className="absolute inset-0 z-[3] flex items-center justify-between pt-[clamp(12vh,25vh,25vh)] px-[5%] pointer-events-none">
         <h1
           ref={headlineRef}
-          className="w-full flex justify-between font-normal"
+          className="w-full flex flex-col md:flex-row md:justify-between font-normal md:items-end gap-1"
           style={{
             fontFamily: "'Geist Sans', sans-serif",
-            fontSize: 'clamp(2.5rem, 7vw, 8rem)',
+            fontSize: 'clamp(2.2rem, 7vw, 8rem)',
             lineHeight: 1.0,
             letterSpacing: '-0.04em',
           }}
@@ -197,7 +197,7 @@ export default function HeroSection() {
       {/* Tagline block - top left */}
       <div
         ref={taglineRef}
-        className="absolute z-[4] opacity-0"
+        className="absolute z-[4] opacity-0 max-md:hidden"
         style={{ left: '15%', top: '12%' }}
       >
         <p className="text-[11px] uppercase tracking-[0.06em] text-black mb-3">
@@ -227,7 +227,7 @@ export default function HeroSection() {
       {/* Reassurance block - top right */}
       <div
         ref={reassuranceRef}
-        className="absolute z-[4] opacity-0 text-right"
+        className="absolute z-[4] opacity-0 text-right max-md:hidden"
         style={{ right: '12%', top: '14%' }}
       >
         <p
@@ -240,6 +240,19 @@ export default function HeroSection() {
         >
           — You don&apos;t have to have it all figured out. Showing up is enough.
         </p>
+      </div>
+
+      {/* Mobile-only CTA */}
+      <div className="absolute bottom-[10%] left-0 right-0 z-[4] flex justify-center md:hidden">
+        <button
+          onClick={openBooking}
+          className="px-7 py-3.5 bg-[#c4a96a] text-black text-[13px] uppercase tracking-[0.08em] hover:bg-black hover:text-[#f2f2f2] transition-all duration-350 cursor-pointer border-none"
+          style={{
+            transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
+          }}
+        >
+          [ contact us ]
+        </button>
       </div>
     </section>
   );

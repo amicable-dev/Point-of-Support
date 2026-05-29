@@ -64,8 +64,7 @@ export default function FoundersSection() {
     <section
       ref={sectionRef}
       id="founders"
-      className="w-full bg-sand overflow-hidden"
-      style={{ padding: '150px 0' }}
+      className="w-full bg-sand overflow-hidden py-16 md:py-36"
     >
       <div className="px-5 flex flex-col md:flex-row gap-10 md:gap-[60px]">
         {/* Portrait - 55% */}

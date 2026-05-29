@@ -21,12 +21,13 @@ export default function JourneySection() {
   const openingRef = useRef<HTMLDivElement>(null);
   const [progress, setProgress] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [vw, setVw] = useState(typeof window !== 'undefined' ? window.innerWidth : 1440);
   const [vh, setVh] = useState(typeof window !== 'undefined' ? window.innerHeight : 1080);
   const [pinnedDone, setPinnedDone] = useState(false);
   const progressRef = useRef(0);
   const stRef = useRef<ScrollTrigger | null>(null);
 
-  const cardH = 600;
+  const cardH = vw < 768 ? 380 : vw < 1024 ? 480 : 600;
   const travel = journeyData.length * cardH + vh * 0.5;
 
   // Pin + drive progress — end exactly when last card reaches final position
@@ -37,7 +38,12 @@ export default function JourneySection() {
     const st = ScrollTrigger.create({
       trigger: section,
       start: 'top top',
-      end: () => `+=${journeyData.length * cardH + window.innerHeight * 0.5}px`,
+      end: () => {
+        const w = window.innerWidth;
+        const h = window.innerHeight;
+        const cH = w < 768 ? 380 : w < 1024 ? 480 : 600;
+        return `+=${journeyData.length * cH + h * 0.5}px`;
+      },
       pin: true,
       pinSpacing: true,
       onUpdate: (self) => {
@@ -57,14 +63,17 @@ export default function JourneySection() {
 
   // Recalculate ScrollTrigger on resize so pin end matches new travel
   useEffect(() => {
-    const handler = () => setVh(window.innerHeight);
+    const handler = () => {
+      setVw(window.innerWidth);
+      setVh(window.innerHeight);
+    };
     window.addEventListener('resize', handler);
     return () => window.removeEventListener('resize', handler);
   }, []);
 
   useEffect(() => {
     stRef.current?.refresh();
-  }, [vh]);
+  }, [vw, vh]);
 
   // WebGL unrolling shader for background images
   useEffect(() => {
@@ -313,7 +322,7 @@ export default function JourneySection() {
       ref={sectionRef}
       id="journey-section"
       className="relative w-full bg-black"
-      style={{ height: '100vh', overflow: 'hidden' }}
+      style={{ height: '100dvh', overflow: 'hidden' }}
     >
       {/* WebGL canvas — unrolling shader background */}
       <canvas

@@ -85,8 +85,7 @@ export default function ServicesCarouselSection() {
     <section
       ref={sectionRef}
       id="services"
-      className="w-full bg-sand overflow-hidden"
-      style={{ padding: '150px 0 100px' }}
+      className="w-full bg-sand overflow-hidden py-16 md:py-36"
     >
       {/* Section label + heading */}
       <div className="px-5 mb-16">
@@ -124,7 +123,7 @@ export default function ServicesCarouselSection() {
             key={i}
             className="service-card flex-shrink-0 group cursor-pointer transition-transform duration-350 hover:-translate-y-1"
             style={{
-              width: 'clamp(240px, 320px, 320px)',
+              width: 'clamp(220px, 320px, 320px)',
               scrollSnapAlign: 'start',
               transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
             }}
@@ -180,14 +179,14 @@ export default function ServicesCarouselSection() {
       <div className="flex justify-end gap-2 px-5 mt-8">
         <button
           onClick={() => scroll('left')}
-          className="w-10 h-10 flex items-center justify-center border border-[#1d1d1d] text-[#1d1d1d] hover:border-black hover:bg-black hover:text-white transition-all duration-300 cursor-pointer"
+          className="w-12 h-12 md:w-10 md:h-10 flex items-center justify-center border border-[#1d1d1d] text-[#1d1d1d] hover:border-black hover:bg-black hover:text-white transition-all duration-300 cursor-pointer"
           aria-label="Scroll left"
         >
           <span className="text-lg">&larr;</span>
         </button>
         <button
           onClick={() => scroll('right')}
-          className="w-10 h-10 flex items-center justify-center border border-[#1d1d1d] text-[#1d1d1d] hover:border-black hover:bg-black hover:text-white transition-all duration-300 cursor-pointer"
+          className="w-12 h-12 md:w-10 md:h-10 flex items-center justify-center border border-[#1d1d1d] text-[#1d1d1d] hover:border-black hover:bg-black hover:text-white transition-all duration-300 cursor-pointer"
           aria-label="Scroll right"
         >
           <span className="text-lg">&rarr;</span>

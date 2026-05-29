@@ -66,8 +66,7 @@ export default function ResourcesSection() {
     <section
       ref={sectionRef}
       id="resources"
-      className="w-full bg-[#f2f2f2] overflow-hidden"
-      style={{ padding: '150px 0' }}
+      className="w-full bg-[#f2f2f2] overflow-hidden py-16 md:py-36"
     >
       <div className="px-5 grid grid-cols-1 md:grid-cols-3 gap-10">
         {/* Left column - label, heading, description, button */}

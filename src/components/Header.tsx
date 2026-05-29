@@ -20,11 +20,8 @@ export default function Header() {
         className="fixed top-0 left-0 right-0 z-[100] h-14 flex items-center bg-black/30 backdrop-blur-sm"
       >
         <div
-          className="w-full h-full grid items-center px-5"
-          style={{
-            gridTemplateColumns: '1fr 1fr 1fr',
-            borderBottom: '1px solid rgba(210, 207, 204, 0.15)',
-          }}
+          className="w-full h-full grid grid-cols-3 items-center px-5"
+          style={{ borderBottom: '1px solid rgba(210, 207, 204, 0.15)' }}
         >
           {/* Left column */}
           <div className="flex items-center gap-4">
@@ -33,9 +30,9 @@ export default function Header() {
               className="group flex flex-col gap-[11px] cursor-pointer py-2"
               aria-label="Open menu"
             >
-              <span className="block w-5 h-px bg-white transition-transform duration-300 group-hover:-translate-x-1" />
-              <span className="block w-5 h-px bg-white" />
-              <span className="block w-5 h-px bg-white transition-transform duration-300 group-hover:translate-x-1" />
+              <span className="block w-5 h-0.5 bg-white transition-transform duration-300 group-hover:-translate-x-1" />
+              <span className="block w-5 h-0.5 bg-white" />
+              <span className="block w-5 h-0.5 bg-white transition-transform duration-300 group-hover:translate-x-1" />
             </button>
             <nav className="hidden md:flex items-center gap-4">
               <button
