@@ -179,10 +179,10 @@ export default function HeroSection() {
 
       {/* Headline + tagline — centered flex column on mobile, split on desktop */}
       <div className="absolute inset-0 z-[3] flex flex-col justify-center px-[5%] md:pt-[25vh] md:flex-row md:items-center md:justify-between pointer-events-none">
-        <div className="flex flex-col gap-4 md:gap-0">
+        <div className="flex flex-col gap-4 md:gap-0 w-full">
           <h1
             ref={headlineRef}
-            className="flex flex-col md:flex-row md:justify-between font-normal md:items-end gap-0.5 md:gap-1"
+            className="w-full flex flex-col md:flex-row md:justify-between font-normal md:items-end gap-0.5 md:gap-1"
             style={{
               fontFamily: "'Geist Sans', sans-serif",
               fontSize: 'clamp(2rem, 10vw, 8rem)',
