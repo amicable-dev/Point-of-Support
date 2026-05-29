@@ -209,7 +209,7 @@ export default function JourneySection() {
       }
 
       gl.clearColor(0, 0, 0, 0);
-      gl.clear(gl.COLLOR_BUFFER_BIT);
+      gl.clear(gl.COLOR_BUFFER_BIT);
 
       const elapsed = (performance.now() - startTime) / 1000;
       gl.uniform1f(uTime, elapsed);
@@ -306,7 +306,6 @@ export default function JourneySection() {
       </span>
     ));
 
-  const totalCards = journeyData.length;
   const stackOffset = -progress * travel;
 
   return (
